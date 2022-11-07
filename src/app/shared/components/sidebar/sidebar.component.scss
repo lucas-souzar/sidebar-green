@@ -1,0 +1,113 @@
+.sidebar {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 100%;
+  background-color: #048480;
+  transition: width 0.4s;
+
+  .sidebar-inner {
+    width: 260px;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      height: 64px;
+      background-color: rgba(0, 0, 0, 0.1);
+
+      .sidebar-burger {
+        width: 72px;
+        height: 64px;
+        color: #ffffff;
+      }
+
+      .sidebar-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #ffffff;
+        opacity: 0;
+        transition: 0.3s;
+
+        .logo-text {
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+
+        mat-icon {
+          width: 2rem;
+          height: 2rem;
+          font-size: 2rem;
+        }
+      }
+
+      .open-logo {
+        opacity: 1;
+      }
+    }
+
+    .sidebar-menu {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .icon-button {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      height: 60px;
+      font-family: "Roboto";
+      font-size: 1rem;
+      padding: 0 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      transition: color 0.3s;
+
+      &:hover {
+        @extend .active;
+      }
+
+      & > span {
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      .open-span {
+        opacity: 1;
+        animation: appear 0.5s both;
+      }
+    }
+
+    .active {
+      color: #10403f;
+      font-weight: 500;
+    }
+  }
+}
+
+.open {
+  width: 260px;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    translate: 0 10px;
+  }
+  100% {
+    opacity: 1;
+    translate: 0;
+  }
+}

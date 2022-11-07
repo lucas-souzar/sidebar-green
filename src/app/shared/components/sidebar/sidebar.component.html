@@ -1,1 +1,39 @@
-<p>sidebar works!</p>
+<nav aria-label="sidebar" class="sidebar" [ngClass]="isOpen ? 'open' : ''">
+  <div class="sidebar-inner">
+    <header class="sidebar-header">
+      <button type="button" class="sidebar-burger" (click)="isOpen = !isOpen">
+        <mat-icon>{{ isOpen ? "close" : "menu" }}</mat-icon>
+      </button>
+      <span class="sidebar-logo" [ngClass]="isOpen ? 'open-logo' : ''">
+        <mat-icon>category</mat-icon>
+        <span class="logo-text">Paeky</span>
+      </span>
+    </header>
+
+    <nav aria-label="sidebar-menu" class="sidebar-menu">
+      <button
+        *ngFor="let item of menuItems; let i = index"
+        type="button"
+        class="icon-button"
+        [routerLink]="item.link"
+        routerLinkActive="active"
+      >
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span
+          [ngClass]="isOpen ? 'open-span' : ''"
+          [style]="{ 'animation-delay': '0.' + i + 's' }"
+          >{{ item.name }}</span
+        >
+      </button>
+    </nav>
+
+    <div style="flex: 1"></div>
+
+    <footer class="sidebar-footer">
+      <button type="button" class="icon-button">
+        <mat-icon>logout</mat-icon>
+        <span [ngClass]="isOpen ? 'open-span' : ''">Logout</span>
+      </button>
+    </footer>
+  </div>
+</nav>

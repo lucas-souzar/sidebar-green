@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,8 @@ import { PublicRoutesComponent } from './shared/components/layouts/public-routes
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
+import { ProductsComponent } from './views/products/products.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,17 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
     PublicRoutesComponent,
     NotFoundComponent,
     SidebarComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ProductsComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

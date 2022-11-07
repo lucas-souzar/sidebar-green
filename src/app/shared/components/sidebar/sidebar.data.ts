@@ -1,27 +1,27 @@
 export const menu = [
   {
-    name: 'Home',
+    name: 'Dashboard',
     icon: 'home',
-    link: '',
+    link: 'dashboard',
+  },
+  {
+    name: 'Products',
+    icon: 'lock',
+    link: 'products',
   },
   {
     name: 'Maps',
     icon: 'location_on',
-    link: '',
+    link: 'blank',
   },
   {
     name: 'Settings',
     icon: 'settings',
-    link: '',
+    link: 'blank',
   },
   {
     name: 'Accounts',
     icon: 'person',
-    link: '',
-  },
-  {
-    name: 'Security',
-    icon: 'lock',
-    link: '',
+    link: 'blank',
   },
 ];
